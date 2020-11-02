@@ -16,10 +16,21 @@ public class UniqueNumbers {
         for (int index = 0; index < numbers.length; index++) {
             numbers[index] = input.nextInt();
         }
-
+     
         int[] uniqueNumbers = new int[numbers.length];
-        // Find unique numbers in numbers
-
+          int count= 0;
+        for (int index =0 ; index < numbers.length; index++){ 
+        for (int i=0; i < numbers.length; i++){
+        if (uniqueNumbers[i]== 0) {
+          uniqueNumbers[i] = numbers[index];
+          break;
+        }
+        else if(uniqueNumbers[i] == numbers[index])   {
+        break;
+        }
+        }
+        }
+        
         String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
         System.out.println("Unique numbers: " + uniqueNumbersAsString);
     }
